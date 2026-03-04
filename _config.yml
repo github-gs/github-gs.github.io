@@ -21,6 +21,7 @@ author: Some Person
 
 navbar-links:
   About Me: "aboutme"
+  个人信息: "personal-info"
   Resources:
     - Beautiful Jekyll: "https://beautifuljekyll.com"
     - Learn markdown: "https://www.markdowntutorial.com/"
