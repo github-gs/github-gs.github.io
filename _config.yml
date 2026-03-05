@@ -30,6 +30,7 @@ navbar-links:
   PUBLICATIONS: "publications"
   CAREERS: "careers"
   CONTACT: "contact"
+  ABOUT: "personal-info"
 
 ################
 # --- Logo --- #
