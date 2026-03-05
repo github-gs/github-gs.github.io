@@ -10,22 +10,26 @@
 ############################
 
 # Name of website
-title: My website
+title: Dingfeng Wu Lab
 
 # Your name to show in the footer
-author: Some Person
+author: Dingfeng Wu
+
+# Site description
+description: "Bioinformatics, Metagenomics and Artificial intelligence"
 
 ###############################################
 # --- List of links in the navigation bar --- #
 ###############################################
 
 navbar-links:
-  About Me: "aboutme"
-  个人信息: "personal-info"
-  Resources:
-    - Beautiful Jekyll: "https://beautifuljekyll.com"
-    - Learn markdown: "https://www.markdowntutorial.com/"
-  Author's home: "https://deanattali.com"
+  HOME: "index"
+  NEWS: "news"
+  PEOPLE: "people"
+  SOFTWARE: "software"
+  PUBLICATIONS: "publications"
+  CAREERS: "careers"
+  CONTACT: "contact"
 
 ################
 # --- Logo --- #
@@ -51,14 +55,12 @@ round-avatar: true
 # You can change the order that they show up on the page by changing the order here.
 # Uncomment the links you want to show and add your information to each one.
 social-network-links:
-  email: "someone@example.com"
-  rss: true  # remove this line if you don't want to show an RSS link at the bottom
-  facebook: deanattali
-  github: daattali
-  twitter: daattali
-  patreon: DeanAttali
-  youtube: "@daattali"
-  whatsapp: 15551212
+  email: "dfw_bioinfo@126.com"
+  facebook: "Wu Dingfeng"
+  github: "dfwlab"
+  twitter: "dfw_biolab"
+  telephone: "19946252117"
+  ORCID: "0000-0002-9287-122X"
 #  medium: yourname
 #  reddit: yourname or r/yoursubreddit
 #  linkedin: daattali
@@ -103,7 +105,7 @@ share-links-active:
 
 # How to display the link to your website in the footer
 # Remove this if you don't want a link in the footer
-url-pretty: "MyWebsite.com"
+url-pretty: "dfwlab.github.io"
 
 # Add the website title to the title of every page
 title-on-all-pages: true
