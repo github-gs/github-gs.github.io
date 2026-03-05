@@ -3,3 +3,44 @@ layout: home
 title: My website
 subtitle: This is where I will tell my friends way too much about me
 ---
+
+<div class="hero-banner" style="position: relative; width: 100%; overflow: hidden; max-height: 500px;">
+  <img src="/assets/img/gzucm.jpg" alt="Gaos Lab Banner" style="width: 100%; height: auto; display: block; max-height: 500px; object-fit: cover;">
+
+  <div class="banner-text" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; color: white; font-family: 'Microsoft YaHei', '微软雅黑', sans-serif; background: linear-gradient(to bottom, rgba(0,0,0,0.4) 0%, rgba(0,0,0,0.2) 50%, rgba(0,0,0,0.4) 100%); padding: 20px;">
+
+    <h1 style="font-size: clamp(28px, 5vw, 48px); font-weight: bold; margin-bottom: 15px; text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.8); transition: transform 0.3s ease;">
+      Gaos Lab
+    </h1>
+
+    <p style="font-size: clamp(18px, 3vw, 28px); margin-top: 0; max-width: 80%; line-height: 1.5; text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.8);">
+      Bioinformatics, Metagenomes, Heart Failure
+    </p>
+
+  </div>
+</div>
+
+<style>
+  .hero-banner:hover .banner-text h1 {
+    transform: translateY(-5px);
+    text-shadow: 3px 3px 12px rgba(0, 0, 0, 0.9);
+  }
+
+  @media (max-width: 768px) {
+    .hero-banner {
+      max-height: 350px;
+    }
+    .hero-banner img {
+      max-height: 350px;
+    }
+  }
+
+  @media (max-width: 480px) {
+    .hero-banner {
+      max-height: 250px;
+    }
+    .hero-banner img {
+      max-height: 250px;
+    }
+  }
+</style>
