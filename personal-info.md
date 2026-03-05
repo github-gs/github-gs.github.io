@@ -15,3 +15,40 @@ subtitle: 关于我的基本资料-大帅哥！
 - 研究/兴趣方向
 - 联系方式
 
+## 生活照
+
+<div class="container mt-4">
+  <div class="row">
+    <div class="col-sm-6 mb-4">
+      <div class="card h-100">
+        <img src="/assets/img/life1.png" class="card-img-top" alt="生活照1">
+        <div class="card-body text-center">
+          <p class="card-text">生活照1</p>
+        </div>
+      </div>
+    </div>
+    <div class="col-sm-6 mb-4">
+      <div class="card h-100">
+        <img src="/assets/img/life2.jpg" class="card-img-top" alt="生活照2">
+        <div class="card-body text-center">
+          <p class="card-text">生活照2</p>
+        </div>
+      </div>
+    </div>
+    <div class="col-sm-6 mb-4">
+      <div class="card h-100">
+        <div class="card-body text-center">
+          <p class="card-text">待添加照片</p>
+        </div>
+      </div>
+    </div>
+    <div class="col-sm-6 mb-4">
+      <div class="card h-100">
+        <div class="card-body text-center">
+          <p class="card-text">待添加照片</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
