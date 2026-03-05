@@ -49,6 +49,20 @@ subtitle: 关于我的基本资料-大帅哥！
         </div>
       </div>
     </div>
+    <div class="col-sm-6 mb-4">
+      <div class="card h-100">
+        <div class="card-body text-center">
+          <p class="card-text">预留位置1</p>
+        </div>
+      </div>
+    </div>
+    <div class="col-sm-6 mb-4">
+      <div class="card h-100">
+        <div class="card-body text-center">
+          <p class="card-text">预留位置2</p>
+        </div>
+      </div>
+    </div>
   </div>
 </div>
 
