@@ -1,85 +1,659 @@
----
-layout: page
-title: Dingfeng Wu Lab
-subtitle: Bioinformatics, Metagenomics and Artificial intelligence
-cover-img: /assets/img/hanzhou.png
----
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>张明远 | 青年研究员</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Noto+Serif+SC:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
-<div class="container-fluid" role="main">
-  <div class="row">
-    <div class="col">
-      <div class="container-lg">
-        <div class="row" style="margin-top: 0rem">
-          <h2>Research focus</h2>
-          <p class="text-justify">The Wu Lab focuses on the integration and analysis of omics data (genome, transcriptome, proteome, metabolome, macrogenome, etc.), especially the research of metagenomics.
-            The Wu Lab uses machine learning, deep learning, artificial intelligence and causal inference algorithms for development and application.
-            And we are also engaged in computer-aided drug design, including TCM informatics and TCM modernization research.
-          </p>
-        </div>
-      </div>
+        :root {
+            --primary-color: #1a365d;
+            --accent-color: #3182ce;
+            --text-dark: #2d3748;
+            --text-light: #718096;
+            --bg-light: #f7fafc;
+            --white: #ffffff;
+            --gradient-overlay: linear-gradient(135deg, rgba(26, 54, 93, 0.85) 0%, rgba(49, 130, 206, 0.75) 100%);
+        }
 
-      <div class="container-lg">
-        <div class="row" style="margin-top: 3rem">
-          <div class="col-lg-4">
-            <div class="text-center"><img alt="Human microbiome" class="rounded-circle shadow" src="/assets/img/bioinformatics2.png" width="200px"></div>
-            <h2 class="text-center">Bioinformatics</h2>
-            <p class="text-justify" style="height:250px; overflow: hidden;">Bioinformatics plays a crucial role in the understanding of genetics and molecular biology and is used to develop new techniques for drug discovery, gene therapy, and personalized medicine. We use bioinformatics technology to integrate omics data, research on disease mechanism, computer-aided drug design and other research.</p>
-            <p class="text-center" style="margin-bottom: 1rem"> <a class="btn btn-primary" href="/publications" role="button">More about our publications »</a> </p>
-          </div>
-          <div class="col-lg-4">
-            <div class="text-center"><img alt="Bioinformatics" class="rounded-circle shadow" src="/assets/img/metagenomics2.png" width="200px"></div>
-            <h2 class="text-center">Metagenomics</h2>
-            <p class="text-justify" style="height:250px; overflow: hidden;">Metagenomics provides a comprehensive view of the diversity of microorganisms in a given environment. We focuse on studying the mechanism of gut microbiome in nonalcoholic fatty liver disease, inflammatory bowel disease, coronary heart disease, tumor and other diseases, exploring biomarker and providing new treatment strategies.</p>
-            <p class="text-center" style="margin-bottom: 1rem"> <a class="btn btn-primary" href="/publications" role="button">More about our publications »</a> </p>
-          </div>
-          <div class="col-lg-4">
-            <div class="text-center"><img alt="Ocean microbiome" class="rounded-circle shadow" src="/assets/img/artificial_intelligence.png" width="200px"></div>
-            <h2 class="text-center">Artificial Intelligence</h2>
-            <p class="text-justify" style="height:250px; overflow: hidden;">Artificial Intelligence (AI) was used in the field of biology to solve complex biological problems. It can analyze of vast amounts of data, make predictions and decisions, and provide new insights into complex biological systems. We use AI technology to develop new algorithms for drug discovery, predictive medicine and microbial ecology.</p>
-            <p class="text-center" style="margin-bottom: 1rem"> <a class="btn btn-primary" href="/publications" role="button">More about our publications »</a> </p>
-          </div>
-        </div>
-      </div>
+        html {
+            scroll-behavior: smooth;
+        }
 
-      <div class="container-lg">
-        <hr/>
-        <div class="row">
-          <h3 class="text-justify">Targeting keystone species helps restore the dysbiosis of butyrate-producing bacteria in nonalcoholic fatty liver disease</h3>
-          <div class="row">
-            <div class="col-lg-4">
-              <img style="margin-top: 3.5rem;" src="/assets/img/research/research_nafld_keystone.png">
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            line-height: 1.6;
+            color: var(--text-dark);
+            background-color: var(--white);
+        }
+
+        /* Section 1: Hero - University Introduction */
+        .hero {
+            position: relative;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+        }
+
+        .hero-bg {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: url('https://images.unsplash.com/photo-1562774053-701939374585?ixlib=rb-4.0.3&auto=format&fit=crop&w=2000&q=80');
+            background-size: cover;
+            background-position: center;
+            filter: brightness(0.9);
+        }
+
+        .hero-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: var(--gradient-overlay);
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            text-align: center;
+            padding: 2rem;
+            max-width: 900px;
+        }
+
+        .university-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.75rem;
+            background: rgba(255, 255, 255, 0.15);
+            backdrop-filter: blur(10px);
+            padding: 0.75rem 1.5rem;
+            border-radius: 50px;
+            margin-bottom: 2rem;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .university-badge svg {
+            width: 24px;
+            height: 24px;
+            fill: white;
+        }
+
+        .university-badge span {
+            color: rgba(255, 255, 255, 0.95);
+            font-size: 0.9rem;
+            font-weight: 500;
+            letter-spacing: 0.5px;
+        }
+
+        .hero h1 {
+            font-family: 'Noto Serif SC', serif;
+            font-size: clamp(2.5rem, 6vw, 4.5rem);
+            font-weight: 700;
+            color: var(--white);
+            margin-bottom: 1.5rem;
+            line-height: 1.2;
+            text-shadow: 0 2px 20px rgba(0, 0, 0, 0.2);
+        }
+
+        .hero-intro {
+            font-size: clamp(1.1rem, 2.5vw, 1.35rem);
+            color: rgba(255, 255, 255, 0.9);
+            max-width: 700px;
+            margin: 0 auto 2rem;
+            line-height: 1.8;
+            font-weight: 300;
+        }
+
+        .hero-meta {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            flex-wrap: wrap;
+            margin-top: 2rem;
+        }
+
+        .hero-meta-item {
+            text-align: center;
+            color: rgba(255, 255, 255, 0.8);
+        }
+
+        .hero-meta-item strong {
+            display: block;
+            font-size: 1.5rem;
+            color: var(--white);
+            font-weight: 600;
+        }
+
+        .hero-meta-item span {
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .scroll-indicator {
+            position: absolute;
+            bottom: 2rem;
+            left: 50%;
+            transform: translateX(-50%);
+            color: rgba(255, 255, 255, 0.7);
+            animation: bounce 2s infinite;
+        }
+
+        @keyframes bounce {
+            0%, 20%, 50%, 80%, 100% { transform: translateX(-50%) translateY(0); }
+            40% { transform: translateX(-50%) translateY(-10px); }
+            60% { transform: translateX(-50%) translateY(-5px); }
+        }
+
+        /* Section 2: Research Areas */
+        .research {
+            padding: 6rem 2rem;
+            background-color: var(--bg-light);
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 4rem;
+        }
+
+        .section-label {
+            display: inline-block;
+            font-size: 0.85rem;
+            font-weight: 600;
+            color: var(--accent-color);
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 1rem;
+        }
+
+        .section-title {
+            font-family: 'Noto Serif SC', serif;
+            font-size: clamp(2rem, 4vw, 2.75rem);
+            color: var(--primary-color);
+            margin-bottom: 1rem;
+        }
+
+        .section-subtitle {
+            font-size: 1.1rem;
+            color: var(--text-light);
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .research-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .research-card {
+            background: var(--white);
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -1px rgba(0, 0, 0, 0.03);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .research-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+        }
+
+        .research-image {
+            height: 200px;
+            background-size: cover;
+            background-position: center;
+            position: relative;
+        }
+
+        .research-image::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            height: 60%;
+            background: linear-gradient(to top, rgba(0,0,0,0.4), transparent);
+        }
+
+        .research-icon {
+            position: absolute;
+            bottom: 1rem;
+            right: 1rem;
+            width: 50px;
+            height: 50px;
+            background: var(--white);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+            z-index: 1;
+        }
+
+        .research-icon svg {
+            width: 28px;
+            height: 28px;
+            fill: var(--accent-color);
+        }
+
+        .research-content {
+            padding: 1.5rem;
+        }
+
+        .research-content h3 {
+            font-size: 1.25rem;
+            color: var(--primary-color);
+            margin-bottom: 0.75rem;
+            font-weight: 600;
+        }
+
+        .research-content p {
+            color: var(--text-light);
+            font-size: 0.95rem;
+            line-height: 1.7;
+        }
+
+        .research-tags {
+            display: flex;
+            gap: 0.5rem;
+            margin-top: 1rem;
+            flex-wrap: wrap;
+        }
+
+        .research-tag {
+            font-size: 0.75rem;
+            padding: 0.35rem 0.75rem;
+            background: var(--bg-light);
+            color: var(--accent-color);
+            border-radius: 20px;
+            font-weight: 500;
+        }
+
+        /* Section 3: Publications */
+        .publications {
+            padding: 6rem 2rem;
+            background-color: var(--white);
+        }
+
+        .pub-list {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .pub-item {
+            display: flex;
+            gap: 1.5rem;
+            padding: 2rem;
+            border-bottom: 1px solid #e2e8f0;
+            transition: background-color 0.2s ease;
+        }
+
+        .pub-item:hover {
+            background-color: var(--bg-light);
+            border-radius: 12px;
+        }
+
+        .pub-item:last-child {
+            border-bottom: none;
+        }
+
+        .pub-number {
+            flex-shrink: 0;
+            width: 50px;
+            height: 50px;
+            background: var(--primary-color);
+            color: var(--white);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            font-size: 1.1rem;
+        }
+
+        .pub-content {
+            flex: 1;
+        }
+
+        .pub-title {
+            font-family: 'Noto Serif SC', serif;
+            font-size: 1.15rem;
+            color: var(--primary-color);
+            margin-bottom: 0.5rem;
+            font-weight: 600;
+            line-height: 1.5;
+        }
+
+        .pub-desc {
+            color: var(--text-light);
+            font-size: 0.95rem;
+            line-height: 1.7;
+            margin-bottom: 0.75rem;
+        }
+
+        .pub-meta {
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+            font-size: 0.85rem;
+        }
+
+        .pub-journal {
+            color: var(--accent-color);
+            font-weight: 500;
+        }
+
+        .pub-year {
+            color: var(--text-light);
+        }
+
+        .pub-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.25rem;
+            padding: 0.2rem 0.6rem;
+            background: #c6f6d5;
+            color: #22543d;
+            border-radius: 4px;
+            font-size: 0.75rem;
+            font-weight: 600;
+        }
+
+        /* Footer */
+        .footer {
+            background: var(--primary-color);
+            color: rgba(255, 255, 255, 0.8);
+            text-align: center;
+            padding: 2rem;
+            font-size: 0.9rem;
+        }
+
+        .footer a {
+            color: var(--white);
+            text-decoration: none;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero-meta {
+                gap: 1.5rem;
+            }
+
+            .research {
+                padding: 4rem 1.5rem;
+            }
+
+            .research-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .publications {
+                padding: 4rem 1.5rem;
+            }
+
+            .pub-item {
+                flex-direction: column;
+                gap: 1rem;
+                padding: 1.5rem;
+            }
+
+            .pub-number {
+                width: 40px;
+                height: 40px;
+                font-size: 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Section 1: Hero - University Introduction -->
+    <section class="hero">
+        <div class="hero-bg"></div>
+        <div class="hero-overlay"></div>
+        <div class="hero-content">
+            <div class="university-badge">
+                <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M12 3L1 9L12 15L21 10.09V17H23V9M5 13.18V17.18L12 21L19 17.18V13.18L12 17L5 13.18Z"/>
+                </svg>
+                <span>清华大学 · 计算机科学与技术系</span>
             </div>
-            <div class="col-lg-8">
-              <p class="text-justify" style="margin-top: 1.5rem;">The dysbiosis of the gut microbiome is one of the pathogenic factors of nonalcoholic fatty liver disease (NAFLD) and also affects the treatment and intervention of NAFLD. Among gut microbiomes, keystone species that regulate the integrity and stability of an ecological community have become the potential intervention targets for NAFLD. An algorithm was implemented to identify keystone species based on causal inference theories and dynamic intervention simulation. Our findings demonstrate the importance of keystone species in restoring the microbial composition toward a normal gut microbiome, suggesting a novel potential microbial treatment for NAFLD.
-              </p>
+            <h1>张明远</h1>
+            <p class="hero-intro">
+                专注于人工智能与机器学习领域的青年研究员，致力于探索深度学习在科学计算中的创新应用，
+                推动AI技术与基础科学的深度融合。
+            </p>
+            <div class="hero-meta">
+                <div class="hero-meta-item">
+                    <strong>15+</strong>
+                    <span>发表论文</span>
+                </div>
+                <div class="hero-meta-item">
+                    <strong>800+</strong>
+                    <span>引用次数</span>
+                </div>
+                <div class="hero-meta-item">
+                    <strong>h-12</strong>
+                    <span>h-index</span>
+                </div>
             </div>
-          </div>
         </div>
-        <div class="row">
-          <h3 class="text-justify">Dr AFC: drug repositioning through anti-fibrosis characteristic</h3>
-          <div class="row">
-            <div class="col-lg-8">
-              <p class="text-justify" style="margin-top: 1.5rem;">In this study, anti-fibrosis knowledge base was first built by collecting data from multiple resources. Both structural and biological profiles were then derived from the knowledge base and used for constructing machine learning models including Structural Profile Prediction Model (SPPM) and Biological Profile Prediction Model (BPPM). Three external public data sets were employed for validation purpose and further exploration of potential repositioning drugs in wider chemical space. The resulting SPPM and BPPM models achieve area under the receiver operating characteristic curve (area under the curve) of 0.879 and 0.972 in the training set, and 0.814 and 0.874 in the testing set. Web server: <a href="https://www.biosino.org/drafc">https://www.biosino.org/drafc</a>.
-              </p>
-            </div>
-            <div class="col-lg-4">
-              <img style="margin-top: 3rem;" src="/assets/img/research/research_drafc.png">
-            </div>
-          </div>
+        <div class="scroll-indicator">
+            <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M7 13l5 5 5-5M7 6l5 5 5-5"/>
+            </svg>
         </div>
-        <div class="row">
-          <h3 class="text-justify">Phylogenetic analyses with systematic taxon sampling show that mitochondria branch within Alphaproteobacteria</h3>
-          <div class="row">
-            <div class="col-lg-4">
-              <img style="margin-top: 3rem;" src="/assets/img/research/research_NEE.png">
+    </section>
+
+    <!-- Section 2: Research Areas -->
+    <section class="research">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-label">Research</span>
+                <h2 class="section-title">研究方向</h2>
+                <p class="section-subtitle">
+                    聚焦前沿交叉领域，探索人工智能的无限可能
+                </p>
             </div>
-            <div class="col-lg-8">
-              <p class="text-justify" style="margin-top: 1.5rem;">Though it is well accepted that mitochondria originated from an alphaproteobacteria-like ancestor, the phylogenetic relation- ship of the mitochondrial endosymbiont to extant Alphaproteobacteria is yet unresolved. The focus of much debate is whether the affinity between mitochondria and fast-evolving alphaproteobacterial lineages reflects true homology or artefacts. We demonstrate that site-exclusion methods produce erratic phylogenetic estimates of mitochondrial origin. Thus, previous phylogenetic hypotheses on the origin of mitochondria based on pretreated datasets should be re-evaluated. We applied alternative strategies to reduce phylogenetic noise by systematic taxon sampling while keeping site substitution information intact. Cross-validation based on a series of trees placed mitochondria robustly within Alphaproteobacteria, sharing an ancient common ancestor with Rickettsiales and currently unclassified marine lineages.
-              </p>
+            <div class="research-grid">
+                <!-- Research Card 1 -->
+                <div class="research-card">
+                    <div class="research-image" style="background-image: url('https://images.unsplash.com/photo-1677442136019-21780ecad995?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80');">
+                        <div class="research-icon">
+                            <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/>
+                            </svg>
+                        </div>
+                    </div>
+                    <div class="research-content">
+                        <h3>深度学习理论</h3>
+                        <p>研究神经网络的优化动力学、泛化理论以及深度模型的可解释性，为AI系统的可靠性提供理论基础。</p>
+                        <div class="research-tags">
+                            <span class="research-tag">神经网络</span>
+                            <span class="research-tag">优化算法</span>
+                            <span class="research-tag">泛化理论</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Research Card 2 -->
+                <div class="research-card">
+                    <div class="research-image" style="background-image: url('https://images.unsplash.com/photo-1635070041078-e363dbe005cb?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80');">
+                        <div class="research-icon">
+                            <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-7 3c1.93 0 3.5 1.57 3.5 3.5S13.93 13 12 13s-3.5-1.57-3.5-3.5S10.07 6 12 6zm7 13H5v-.23c0-.62.28-1.2.76-1.58C7.47 15.82 9.64 15 12 15s4.53.82 6.24 2.19c.48.38.76.97.76 1.58V19z"/>
+                            </svg>
+                        </div>
+                    </div>
+                    <div class="research-content">
+                        <h3>科学机器学习</h3>
+                        <p>将物理先验知识融入神经网络设计，开发物理信息神经网络(PINN)用于求解偏微分方程和复杂物理系统建模。</p>
+                        <div class="research-tags">
+                            <span class="research-tag">物理信息神经网络</span>
+                            <span class="research-tag">PDE求解</span>
+                            <span class="research-tag">科学计算</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Research Card 3 -->
+                <div class="research-card">
+                    <div class="research-image" style="background-image: url('https://images.unsplash.com/photo-1555949963-aa79dcee981c?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80');">
+                        <div class="research-icon">
+                            <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M9 11H7v2h2v-2zm4 0h-2v2h2v-2zm4 0h-2v2h2v-2zm2-7h-1V2h-2v2H8V2H6v2H5c-1.11 0-1.99.9-1.99 2L3 20c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 16H5V9h14v11z"/>
+                            </svg>
+                        </div>
+                    </div>
+                    <div class="research-content">
+                        <h3>时序预测与决策</h3>
+                        <p>开发高效的时序建模方法，应用于金融预测、气候建模和智能决策系统，提升复杂动态系统的预测精度。</p>
+                        <div class="research-tags">
+                            <span class="research-tag">时序分析</span>
+                            <span class="research-tag">强化学习</span>
+                            <span class="research-tag">预测建模</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Research Card 4 -->
+                <div class="research-card">
+                    <div class="research-image" style="background-image: url('https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80');">
+                        <div class="research-icon">
+                            <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 17h-2v-2h2v2zm2.07-7.75l-.9.92C13.45 12.9 13 13.5 13 15h-2v-.5c0-1.1.45-2.1 1.17-2.83l1.24-1.26c.37-.36.59-.86.59-1.41 0-1.1-.9-2-2-2s-2 .9-2 2H8c0-2.21 1.79-4 4-4s4 1.79 4 4c0 .88-.36 1.68-.93 2.25z"/>
+                            </svg>
+                        </div>
+                    </div>
+                    <div class="research-content">
+                        <h3>AI for Science</h3>
+                        <p>探索人工智能在材料科学、药物发现和量子计算中的应用，加速科学发现进程，推动跨学科创新。</p>
+                        <div class="research-tags">
+                            <span class="research-tag">材料发现</span>
+                            <span class="research-tag">分子模拟</span>
+                            <span class="research-tag">量子机器学习</span>
+                        </div>
+                    </div>
+                </div>
             </div>
-          </div>
         </div>
-      </div>
-    </div>
-  </div>
-</div>
+    </section>
+
+    <!-- Section 3: Publications -->
+    <section class="publications">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-label">Publications</span>
+                <h2 class="section-title">代表性论文</h2>
+                <p class="section-subtitle">
+                    近期发表在顶级期刊和会议的研究成果
+                </p>
+            </div>
+            <div class="pub-list">
+                <!-- Publication 1 -->
+                <div class="pub-item">
+                    <div class="pub-number">01</div>
+                    <div class="pub-content">
+                        <h3 class="pub-title">Physics-Informed Neural Networks for Solving High-Dimensional Partial Differential Equations</h3>
+                        <p class="pub-desc">提出了一种新的物理信息神经网络架构，有效解决了高维PDE求解中的维度灾难问题，在30维Black-Scholes方程上取得了突破性进展。</p>
+                        <div class="pub-meta">
+                            <span class="pub-journal">Nature Machine Intelligence</span>
+                            <span class="pub-year">2025</span>
+                            <span class="pub-badge">
+                                <svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor">
+                                    <path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/>
+                                </svg>
+                                高被引
+                            </span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Publication 2 -->
+                <div class="pub-item">
+                    <div class="pub-number">02</div>
+                    <div class="pub-content">
+                        <h3 class="pub-title">Understanding Deep Learning Requires Rethinking Generalization: A Geometric Perspective</h3>
+                        <p class="pub-desc">从几何角度重新审视深度学习的泛化理论，揭示了过参数化神经网络隐式正则化的数学机制，为理解深度学习提供了新的理论框架。</p>
+                        <div class="pub-meta">
+                            <span class="pub-journal">Journal of Machine Learning Research</span>
+                            <span class="pub-year">2024</span>
+                            <span class="pub-badge">
+                                <svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor">
+                                    <path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/>
+                                </svg>
+                                编辑推荐
+                            </span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Publication 3 -->
+                <div class="pub-item">
+                    <div class="pub-number">03</div>
+                    <div class="pub-content">
+                        <h3 class="pub-title">Neural Operators for Learning Complex Dynamical Systems from Sparse Data</h3>
+                        <p class="pub-desc">开发了基于神经算子的稀疏数据学习方法，能够从有限的观测数据中准确学习复杂动态系统的演化规律，在流体力学模拟中展现出优异性能。</p>
+                        <div class="pub-meta">
+                            <span class="pub-journal">NeurIPS 2024</span>
+                            <span class="pub-year">2024</span>
+                            <span class="pub-badge">Oral Presentation</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Publication 4 -->
+                <div class="pub-item">
+                    <div class="pub-number">04</div>
+                    <div class="pub-content">
+                        <h3 class="pub-title">Self-Supervised Learning for Scientific Discovery: A Survey and New Directions</h3>
+                        <p class="pub-desc">系统综述了自监督学习在科学发现中的应用，提出了面向科学数据的预训练范式，为AI for Science领域提供了全面的方法论指导。</p>
+                        <div class="pub-meta">
+                            <span class="pub-journal">Science Advances</span>
+                            <span class="pub-year">2024</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Publication 5 -->
+                <div class="pub-item">
+                    <div class="pub-number">05</div>
+                    <div class="pub-content">
+                        <h3 class="pub-title">Efficient Transformer Architectures for Long-Range Time Series Forecasting</h3>
+                        <p class="pub-desc">设计了针对长程时序预测的高效Transformer架构，通过线性注意力机制和层次化建模，在保持精度的同时显著降低了计算复杂度。</p>
+                        <div class="pub-meta">
+                            <span class="pub-journal">ICML 2023</span>
+                            <span class="pub-year">2023</span>
+                            <span class="pub-badge">Spotlight</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <p>© 2025 张明远 | 清华大学计算机科学与技术系</p>
+        <p style="margin-top: 0.5rem; opacity: 0.7;">联系邮箱: zhangmingyuan@tsinghua.edu.cn</p>
+    </footer>
+</body>
+</html>
