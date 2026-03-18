@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>张明远 | 青年研究员</title>
+    <title>高升 | 博士后研究员</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Noto+Serif+SC:wght@400;600;700&display=swap" rel="stylesheet">
     <style>
@@ -14,13 +14,17 @@
         }
 
         :root {
-            --primary-color: #1a365d;
-            --accent-color: #3182ce;
+            --primary-color: #1e3a5f;
+            --accent-color: #2d7d9a;
+            --accent-light: #4a9db8;
             --text-dark: #2d3748;
             --text-light: #718096;
-            --bg-light: #f7fafc;
+            --bg-light: #f8fafc;
+            --bg-warm: #fef9f3;
             --white: #ffffff;
-            --gradient-overlay: linear-gradient(135deg, rgba(26, 54, 93, 0.85) 0%, rgba(49, 130, 206, 0.75) 100%);
+            --gradient-overlay: linear-gradient(135deg, rgba(30, 58, 95, 0.88) 0%, rgba(45, 125, 154, 0.82) 100%);
+            --card-shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
+            --card-hover: 0 12px 40px rgba(0, 0, 0, 0.12);
         }
 
         html {
@@ -28,13 +32,13 @@
         }
 
         body {
-            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
-            line-height: 1.6;
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            line-height: 1.7;
             color: var(--text-dark);
             background-color: var(--white);
         }
 
-        /* Section 1: Hero - University Introduction */
+        /* Section 1: Hero */
         .hero {
             position: relative;
             min-height: 100vh;
@@ -50,10 +54,10 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background-image: url('https://images.unsplash.com/photo-1562774053-701939374585?ixlib=rb-4.0.3&auto=format&fit=crop&w=2000&q=80');
+            background-image: url('https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?ixlib=rb-4.0.3&auto=format&fit=crop&w=2000&q=80');
             background-size: cover;
             background-position: center;
-            filter: brightness(0.9);
+            filter: brightness(0.85);
         }
 
         .hero-overlay {
@@ -70,24 +74,24 @@
             z-index: 2;
             text-align: center;
             padding: 2rem;
-            max-width: 900px;
+            max-width: 850px;
         }
 
         .university-badge {
             display: inline-flex;
             align-items: center;
             gap: 0.75rem;
-            background: rgba(255, 255, 255, 0.15);
-            backdrop-filter: blur(10px);
-            padding: 0.75rem 1.5rem;
+            background: rgba(255, 255, 255, 0.12);
+            backdrop-filter: blur(12px);
+            padding: 0.75rem 1.75rem;
             border-radius: 50px;
             margin-bottom: 2rem;
             border: 1px solid rgba(255, 255, 255, 0.2);
         }
 
         .university-badge svg {
-            width: 24px;
-            height: 24px;
+            width: 22px;
+            height: 22px;
             fill: white;
         }
 
@@ -100,55 +104,66 @@
 
         .hero h1 {
             font-family: 'Noto Serif SC', serif;
-            font-size: clamp(2.5rem, 6vw, 4.5rem);
+            font-size: clamp(2.8rem, 6vw, 4.5rem);
             font-weight: 700;
             color: var(--white);
-            margin-bottom: 1.5rem;
+            margin-bottom: 1rem;
             line-height: 1.2;
             text-shadow: 0 2px 20px rgba(0, 0, 0, 0.2);
         }
 
+        .hero-tagline {
+            font-size: clamp(1.1rem, 2.5vw, 1.4rem);
+            color: rgba(255, 255, 255, 0.85);
+            font-weight: 300;
+            margin-bottom: 1.5rem;
+            letter-spacing: 0.5px;
+        }
+
         .hero-intro {
-            font-size: clamp(1.1rem, 2.5vw, 1.35rem);
-            color: rgba(255, 255, 255, 0.9);
+            font-size: clamp(1rem, 2vw, 1.15rem);
+            color: rgba(255, 255, 255, 0.8);
             max-width: 700px;
-            margin: 0 auto 2rem;
-            line-height: 1.8;
+            margin: 0 auto 2.5rem;
+            line-height: 1.9;
             font-weight: 300;
         }
 
-        .hero-meta {
+        .hero-stats {
             display: flex;
             justify-content: center;
-            gap: 2rem;
+            gap: 3rem;
             flex-wrap: wrap;
             margin-top: 2rem;
         }
 
-        .hero-meta-item {
+        .stat-item {
             text-align: center;
-            color: rgba(255, 255, 255, 0.8);
+            color: rgba(255, 255, 255, 0.9);
         }
 
-        .hero-meta-item strong {
+        .stat-number {
             display: block;
-            font-size: 1.5rem;
+            font-size: 2.2rem;
+            font-weight: 700;
             color: var(--white);
-            font-weight: 600;
+            line-height: 1;
         }
 
-        .hero-meta-item span {
+        .stat-label {
             font-size: 0.85rem;
             text-transform: uppercase;
-            letter-spacing: 1px;
+            letter-spacing: 1.5px;
+            margin-top: 0.5rem;
+            opacity: 0.8;
         }
 
         .scroll-indicator {
             position: absolute;
-            bottom: 2rem;
+            bottom: 2.5rem;
             left: 50%;
             transform: translateX(-50%);
-            color: rgba(255, 255, 255, 0.7);
+            color: rgba(255, 255, 255, 0.6);
             animation: bounce 2s infinite;
         }
 
@@ -176,112 +191,88 @@
 
         .section-label {
             display: inline-block;
-            font-size: 0.85rem;
+            font-size: 0.8rem;
             font-weight: 600;
             color: var(--accent-color);
             text-transform: uppercase;
-            letter-spacing: 2px;
+            letter-spacing: 2.5px;
             margin-bottom: 1rem;
         }
 
         .section-title {
             font-family: 'Noto Serif SC', serif;
-            font-size: clamp(2rem, 4vw, 2.75rem);
+            font-size: clamp(1.9rem, 4vw, 2.6rem);
             color: var(--primary-color);
-            margin-bottom: 1rem;
+            margin-bottom: 0.75rem;
         }
 
         .section-subtitle {
-            font-size: 1.1rem;
+            font-size: 1.05rem;
             color: var(--text-light);
-            max-width: 600px;
+            max-width: 550px;
             margin: 0 auto;
         }
 
         .research-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1.75rem;
         }
 
         .research-card {
             background: var(--white);
             border-radius: 16px;
-            overflow: hidden;
-            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -1px rgba(0, 0, 0, 0.03);
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            padding: 2rem;
+            box-shadow: var(--card-shadow);
+            transition: all 0.35s ease;
+            border: 1px solid rgba(0, 0, 0, 0.04);
         }
 
         .research-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
-        }
-
-        .research-image {
-            height: 200px;
-            background-size: cover;
-            background-position: center;
-            position: relative;
-        }
-
-        .research-image::after {
-            content: '';
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            right: 0;
-            height: 60%;
-            background: linear-gradient(to top, rgba(0,0,0,0.4), transparent);
+            transform: translateY(-6px);
+            box-shadow: var(--card-hover);
         }
 
         .research-icon {
-            position: absolute;
-            bottom: 1rem;
-            right: 1rem;
-            width: 50px;
-            height: 50px;
-            background: var(--white);
-            border-radius: 12px;
+            width: 56px;
+            height: 56px;
+            background: linear-gradient(135deg, var(--accent-color), var(--accent-light));
+            border-radius: 14px;
             display: flex;
             align-items: center;
             justify-content: center;
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
-            z-index: 1;
+            margin-bottom: 1.25rem;
         }
 
         .research-icon svg {
             width: 28px;
             height: 28px;
-            fill: var(--accent-color);
+            fill: white;
         }
 
-        .research-content {
-            padding: 1.5rem;
-        }
-
-        .research-content h3 {
-            font-size: 1.25rem;
+        .research-card h3 {
+            font-size: 1.15rem;
             color: var(--primary-color);
             margin-bottom: 0.75rem;
             font-weight: 600;
         }
 
-        .research-content p {
+        .research-card p {
             color: var(--text-light);
             font-size: 0.95rem;
             line-height: 1.7;
+            margin-bottom: 1rem;
         }
 
-        .research-tags {
+        .research-keywords {
             display: flex;
-            gap: 0.5rem;
-            margin-top: 1rem;
             flex-wrap: wrap;
+            gap: 0.5rem;
         }
 
-        .research-tag {
+        .keyword {
             font-size: 0.75rem;
-            padding: 0.35rem 0.75rem;
+            padding: 0.35rem 0.85rem;
             background: var(--bg-light);
             color: var(--accent-color);
             border-radius: 20px;
@@ -296,38 +287,38 @@
 
         .pub-list {
             max-width: 900px;
-            margin: 0 auto;
+            margin: 0 auto 4rem;
         }
 
         .pub-item {
             display: flex;
-            gap: 1.5rem;
-            padding: 2rem;
-            border-bottom: 1px solid #e2e8f0;
-            transition: background-color 0.2s ease;
+            gap: 1.25rem;
+            padding: 1.75rem;
+            border-bottom: 1px solid #edf2f7;
+            transition: all 0.25s ease;
+            border-radius: 12px;
         }
 
         .pub-item:hover {
             background-color: var(--bg-light);
-            border-radius: 12px;
         }
 
         .pub-item:last-child {
             border-bottom: none;
         }
 
-        .pub-number {
+        .pub-badge {
             flex-shrink: 0;
-            width: 50px;
-            height: 50px;
+            width: 44px;
+            height: 44px;
             background: var(--primary-color);
             color: var(--white);
-            border-radius: 12px;
+            border-radius: 10px;
             display: flex;
             align-items: center;
             justify-content: center;
             font-weight: 700;
-            font-size: 1.1rem;
+            font-size: 0.9rem;
         }
 
         .pub-content {
@@ -336,70 +327,132 @@
 
         .pub-title {
             font-family: 'Noto Serif SC', serif;
-            font-size: 1.15rem;
+            font-size: 1.05rem;
             color: var(--primary-color);
             margin-bottom: 0.5rem;
             font-weight: 600;
             line-height: 1.5;
         }
 
-        .pub-desc {
-            color: var(--text-light);
-            font-size: 0.95rem;
-            line-height: 1.7;
-            margin-bottom: 0.75rem;
-        }
-
         .pub-meta {
             display: flex;
-            gap: 1rem;
+            gap: 0.75rem;
+            align-items: center;
             flex-wrap: wrap;
-            font-size: 0.85rem;
+            margin-bottom: 0.5rem;
         }
 
         .pub-journal {
+            font-size: 0.85rem;
             color: var(--accent-color);
             font-weight: 500;
         }
 
-        .pub-year {
-            color: var(--text-light);
+        .pub-if {
+            font-size: 0.75rem;
+            padding: 0.2rem 0.6rem;
+            background: #e6f3f7;
+            color: var(--accent-color);
+            border-radius: 4px;
+            font-weight: 600;
         }
 
-        .pub-badge {
-            display: inline-flex;
-            align-items: center;
-            gap: 0.25rem;
-            padding: 0.2rem 0.6rem;
-            background: #c6f6d5;
-            color: #22543d;
-            border-radius: 4px;
-            font-size: 0.75rem;
+        .pub-highlight {
+            font-size: 0.8rem;
+            color: var(--text-light);
+            line-height: 1.6;
+        }
+
+        /* Section 4: Grants & Achievements */
+        .achievements {
+            padding: 0 2rem 5rem;
+            background-color: var(--white);
+        }
+
+        .achievements-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2rem;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .achievement-card {
+            background: var(--bg-warm);
+            border-radius: 16px;
+            padding: 1.75rem;
+            border: 1px solid rgba(0, 0, 0, 0.04);
+        }
+
+        .achievement-card h3 {
+            font-size: 1.1rem;
+            color: var(--primary-color);
+            margin-bottom: 1.25rem;
             font-weight: 600;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .achievement-card h3 svg {
+            width: 20px;
+            height: 20px;
+            fill: var(--accent-color);
+        }
+
+        .achievement-list {
+            list-style: none;
+        }
+
+        .achievement-list li {
+            padding: 0.75rem 0;
+            border-bottom: 1px dashed #e2d5c5;
+            font-size: 0.9rem;
+            color: var(--text-dark);
+            line-height: 1.6;
+        }
+
+        .achievement-list li:last-child {
+            border-bottom: none;
+        }
+
+        .achievement-list strong {
+            color: var(--primary-color);
+            font-weight: 600;
+        }
+
+        .grant-period {
+            font-size: 0.8rem;
+            color: var(--text-light);
+            display: block;
+            margin-top: 0.25rem;
         }
 
         /* Footer */
         .footer {
             background: var(--primary-color);
-            color: rgba(255, 255, 255, 0.8);
+            color: rgba(255, 255, 255, 0.75);
             text-align: center;
-            padding: 2rem;
+            padding: 2.5rem 2rem;
             font-size: 0.9rem;
         }
 
-        .footer a {
-            color: var(--white);
-            text-decoration: none;
+        .footer p {
+            margin-bottom: 0.5rem;
         }
 
         /* Responsive */
         @media (max-width: 768px) {
-            .hero-meta {
-                gap: 1.5rem;
+            .hero-stats {
+                gap: 2rem;
+            }
+
+            .stat-number {
+                font-size: 1.8rem;
             }
 
             .research {
-                padding: 4rem 1.5rem;
+                padding: 4rem 1.25rem;
             }
 
             .research-grid {
@@ -407,25 +460,34 @@
             }
 
             .publications {
-                padding: 4rem 1.5rem;
+                padding: 4rem 1.25rem;
             }
 
             .pub-item {
                 flex-direction: column;
                 gap: 1rem;
-                padding: 1.5rem;
+                padding: 1.25rem;
             }
 
-            .pub-number {
-                width: 40px;
-                height: 40px;
-                font-size: 1rem;
+            .pub-badge {
+                width: 36px;
+                height: 36px;
+                font-size: 0.8rem;
+            }
+
+            .achievements-grid {
+                grid-template-columns: 1fr;
+                gap: 1.5rem;
+            }
+
+            .achievement-card {
+                padding: 1.5rem;
             }
         }
     </style>
 </head>
 <body>
-    <!-- Section 1: Hero - University Introduction -->
+    <!-- Section 1: Hero -->
     <section class="hero">
         <div class="hero-bg"></div>
         <div class="hero-overlay"></div>
@@ -434,30 +496,32 @@
                 <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                     <path d="M12 3L1 9L12 15L21 10.09V17H23V9M5 13.18V17.18L12 21L19 17.18V13.18L12 17L5 13.18Z"/>
                 </svg>
-                <span>清华大学 · 计算机科学与技术系</span>
+                <span>广州中医药大学 · 博士后</span>
             </div>
-            <h1>张明远</h1>
+            <h1>高升</h1>
+            <p class="hero-tagline">中医药与系统生物学交叉研究者</p>
             <p class="hero-intro">
-                专注于人工智能与机器学习领域的青年研究员，致力于探索深度学习在科学计算中的创新应用，
-                推动AI技术与基础科学的深度融合。
+                专注于"肠道微生物-宿主"互作与中医药防治心力衰竭研究，
+                构建"多组学整合—因果推断—机制验证"干湿一体化研究体系，
+                推动微生态医学与中医药交叉融合。
             </p>
-            <div class="hero-meta">
-                <div class="hero-meta-item">
-                    <strong>15+</strong>
-                    <span>发表论文</span>
+            <div class="hero-stats">
+                <div class="stat-item">
+                    <span class="stat-number">14</span>
+                    <span class="stat-label">SCI论文</span>
                 </div>
-                <div class="hero-meta-item">
-                    <strong>800+</strong>
-                    <span>引用次数</span>
+                <div class="stat-item">
+                    <span class="stat-number">6</span>
+                    <span class="stat-label">第一作者</span>
                 </div>
-                <div class="hero-meta-item">
-                    <strong>h-12</strong>
-                    <span>h-index</span>
+                <div class="stat-item">
+                    <span class="stat-number">2</span>
+                    <span class="stat-label">主持基金</span>
                 </div>
             </div>
         </div>
         <div class="scroll-indicator">
-            <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                 <path d="M7 13l5 5 5-5M7 6l5 5 5-5"/>
             </svg>
         </div>
@@ -467,90 +531,74 @@
     <section class="research">
         <div class="container">
             <div class="section-header">
-                <span class="section-label">Research</span>
+                <span class="section-label">Research Focus</span>
                 <h2 class="section-title">研究方向</h2>
                 <p class="section-subtitle">
-                    聚焦前沿交叉领域，探索人工智能的无限可能
+                    聚焦肠道微生态与心血管疾病，探索中医药现代化机制
                 </p>
             </div>
             <div class="research-grid">
-                <!-- Research Card 1 -->
+                <!-- Research 1 -->
                 <div class="research-card">
-                    <div class="research-image" style="background-image: url('https://images.unsplash.com/photo-1677442136019-21780ecad995?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80');">
-                        <div class="research-icon">
-                            <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                                <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/>
-                            </svg>
-                        </div>
+                    <div class="research-icon">
+                        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 17.93c-3.95-.49-7-3.85-7-7.93 0-.62.08-1.21.21-1.79L9 15v1c0 1.1.9 2 2 2v1.93zm6.9-2.54c-.26-.81-1-1.39-1.9-1.39h-1v-3c0-.55-.45-1-1-1H8v-2h2c.55 0 1-.45 1-1V7h2c1.1 0 2-.9 2-2v-.41c2.93 1.19 5 4.06 5 7.41 0 2.08-.8 3.97-2.1 5.39z"/>
+                        </svg>
                     </div>
-                    <div class="research-content">
-                        <h3>深度学习理论</h3>
-                        <p>研究神经网络的优化动力学、泛化理论以及深度模型的可解释性，为AI系统的可靠性提供理论基础。</p>
-                        <div class="research-tags">
-                            <span class="research-tag">神经网络</span>
-                            <span class="research-tag">优化算法</span>
-                            <span class="research-tag">泛化理论</span>
-                        </div>
+                    <h3>肠道微生物-宿主互作</h3>
+                    <p>运用因果推断算法揭示肠道微生态与疾病的因果关系，挖掘核心驱动基因。</p>
+                    <div class="research-keywords">
+                        <span class="keyword">因果推断</span>
+                        <span class="keyword">宏基因组</span>
+                        <span class="keyword">生物标志物</span>
                     </div>
                 </div>
 
-                <!-- Research Card 2 -->
+                <!-- Research 2 -->
                 <div class="research-card">
-                    <div class="research-image" style="background-image: url('https://images.unsplash.com/photo-1635070041078-e363dbe005cb?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80');">
-                        <div class="research-icon">
-                            <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                                <path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-7 3c1.93 0 3.5 1.57 3.5 3.5S13.93 13 12 13s-3.5-1.57-3.5-3.5S10.07 6 12 6zm7 13H5v-.23c0-.62.28-1.2.76-1.58C7.47 15.82 9.64 15 12 15s4.53.82 6.24 2.19c.48.38.76.97.76 1.58V19z"/>
-                            </svg>
-                        </div>
+                    <div class="research-icon">
+                        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zM9 17H7v-7h2v7zm4 0h-2V7h2v10zm4 0h-2v-4h2v4z"/>
+                        </svg>
                     </div>
-                    <div class="research-content">
-                        <h3>科学机器学习</h3>
-                        <p>将物理先验知识融入神经网络设计，开发物理信息神经网络(PINN)用于求解偏微分方程和复杂物理系统建模。</p>
-                        <div class="research-tags">
-                            <span class="research-tag">物理信息神经网络</span>
-                            <span class="research-tag">PDE求解</span>
-                            <span class="research-tag">科学计算</span>
-                        </div>
+                    <h3>多组学整合分析</h3>
+                    <p>整合宏基因组、代谢组等多组学数据，构建疾病精准分型与早期诊断模型。</p>
+                    <div class="research-keywords">
+                        <span class="keyword">多组学</span>
+                        <span class="keyword">机器学习</span>
+                        <span class="keyword">精准医学</span>
                     </div>
                 </div>
 
-                <!-- Research Card 3 -->
+                <!-- Research 3 -->
                 <div class="research-card">
-                    <div class="research-image" style="background-image: url('https://images.unsplash.com/photo-1555949963-aa79dcee981c?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80');">
-                        <div class="research-icon">
-                            <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                                <path d="M9 11H7v2h2v-2zm4 0h-2v2h2v-2zm4 0h-2v2h2v-2zm2-7h-1V2h-2v2H8V2H6v2H5c-1.11 0-1.99.9-1.99 2L3 20c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 16H5V9h14v11z"/>
-                            </svg>
-                        </div>
+                    <div class="research-icon">
+                        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/>
+                        </svg>
                     </div>
-                    <div class="research-content">
-                        <h3>时序预测与决策</h3>
-                        <p>开发高效的时序建模方法，应用于金融预测、气候建模和智能决策系统，提升复杂动态系统的预测精度。</p>
-                        <div class="research-tags">
-                            <span class="research-tag">时序分析</span>
-                            <span class="research-tag">强化学习</span>
-                            <span class="research-tag">预测建模</span>
-                        </div>
+                    <h3>中医药防治心力衰竭</h3>
+                    <p>以芪参颗粒为代表，阐明中药复方调控能量代谢和炎症的分子机制。</p>
+                    <div class="research-keywords">
+                        <span class="keyword">芪参颗粒</span>
+                        <span class="keyword">能量代谢</span>
+                        <span class="keyword">炎症调控</span>
                     </div>
                 </div>
 
-                <!-- Research Card 4 -->
+                <!-- Research 4 -->
                 <div class="research-card">
-                    <div class="research-image" style="background-image: url('https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80');">
-                        <div class="research-icon">
-                            <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                                <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 17h-2v-2h2v2zm2.07-7.75l-.9.92C13.45 12.9 13 13.5 13 15h-2v-.5c0-1.1.45-2.1 1.17-2.83l1.24-1.26c.37-.36.59-.86.59-1.41 0-1.1-.9-2-2-2s-2 .9-2 2H8c0-2.21 1.79-4 4-4s4 1.79 4 4c0 .88-.36 1.68-.93 2.25z"/>
-                            </svg>
-                        </div>
+                    <div class="research-icon">
+                        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M13 7h-2v4L8.5 9.5 7 11l4.5 4.5L16 11l-1.5-1.5L13 11V7zm-1 12C6.48 19 2 14.52 2 9c0-1.82.52-3.52 1.42-4.97L5.5 5.5l1.18-2.65C8.22 2.17 9.57 1.75 11 1.75c4.97 0 9 4.03 9 9s-4.03 9-9 9z"/>
+                        </svg>
                     </div>
-                    <div class="research-content">
-                        <h3>AI for Science</h3>
-                        <p>探索人工智能在材料科学、药物发现和量子计算中的应用，加速科学发现进程，推动跨学科创新。</p>
-                        <div class="research-tags">
-                            <span class="research-tag">材料发现</span>
-                            <span class="research-tag">分子模拟</span>
-                            <span class="research-tag">量子机器学习</span>
-                        </div>
+                    <h3>线粒体能量代谢</h3>
+                    <p>研究心肌线粒体氧化磷酸化功能障碍机制，探索益气活血治法的干预靶点。</p>
+                    <div class="research-keywords">
+                        <span class="keyword">线粒体</span>
+                        <span class="keyword">氧化磷酸化</span>
+                        <span class="keyword">5'-甲硫腺苷</span>
                     </div>
                 </div>
             </div>
@@ -564,87 +612,134 @@
                 <span class="section-label">Publications</span>
                 <h2 class="section-title">代表性论文</h2>
                 <p class="section-subtitle">
-                    近期发表在顶级期刊和会议的研究成果
+                    第一作者论文及高影响因子代表作
                 </p>
             </div>
             <div class="pub-list">
-                <!-- Publication 1 -->
+                <!-- Pub 1 -->
                 <div class="pub-item">
-                    <div class="pub-number">01</div>
+                    <div class="pub-badge">01</div>
                     <div class="pub-content">
-                        <h3 class="pub-title">Physics-Informed Neural Networks for Solving High-Dimensional Partial Differential Equations</h3>
-                        <p class="pub-desc">提出了一种新的物理信息神经网络架构，有效解决了高维PDE求解中的维度灾难问题，在30维Black-Scholes方程上取得了突破性进展。</p>
+                        <h3 class="pub-title">Toward the understanding of altered gut microbiome in Crohn's disease: cause or consequence</h3>
                         <div class="pub-meta">
-                            <span class="pub-journal">Nature Machine Intelligence</span>
-                            <span class="pub-year">2025</span>
-                            <span class="pub-badge">
-                                <svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor">
-                                    <path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/>
-                                </svg>
-                                高被引
-                            </span>
+                            <span class="pub-journal">Gastroenterology</span>
+                            <span class="pub-if">IF = 29.4</span>
                         </div>
+                        <p class="pub-highlight">第一作者 | 阐述肠道微生物与克罗恩病的因果关系，为炎症性肠病研究提供新视角</p>
                     </div>
                 </div>
 
-                <!-- Publication 2 -->
+                <!-- Pub 2 -->
                 <div class="pub-item">
-                    <div class="pub-number">02</div>
+                    <div class="pub-badge">02</div>
                     <div class="pub-content">
-                        <h3 class="pub-title">Understanding Deep Learning Requires Rethinking Generalization: A Geometric Perspective</h3>
-                        <p class="pub-desc">从几何角度重新审视深度学习的泛化理论，揭示了过参数化神经网络隐式正则化的数学机制，为理解深度学习提供了新的理论框架。</p>
+                        <h3 class="pub-title">Microbial genes outperform species and SNVs as diagnostic markers for Crohn's disease on multicohort fecal metagenomes empowered by AI</h3>
                         <div class="pub-meta">
-                            <span class="pub-journal">Journal of Machine Learning Research</span>
-                            <span class="pub-year">2024</span>
-                            <span class="pub-badge">
-                                <svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor">
-                                    <path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/>
-                                </svg>
-                                编辑推荐
-                            </span>
+                            <span class="pub-journal">Gut Microbes</span>
+                            <span class="pub-if">IF = 12.2</span>
                         </div>
+                        <p class="pub-highlight">共同第一作者 | 利用人工智能发现微生物基因标志物，方法学创新</p>
                     </div>
                 </div>
 
-                <!-- Publication 3 -->
+                <!-- Pub 3 -->
                 <div class="pub-item">
-                    <div class="pub-number">03</div>
+                    <div class="pub-badge">03</div>
                     <div class="pub-content">
-                        <h3 class="pub-title">Neural Operators for Learning Complex Dynamical Systems from Sparse Data</h3>
-                        <p class="pub-desc">开发了基于神经算子的稀疏数据学习方法，能够从有限的观测数据中准确学习复杂动态系统的演化规律，在流体力学模拟中展现出优异性能。</p>
+                        <h3 class="pub-title">IBD subtype-regulators IFNG and GBP5 identified by causal inference drive more intense innate immunity and inflammatory responses in CD than those in UC</h3>
                         <div class="pub-meta">
-                            <span class="pub-journal">NeurIPS 2024</span>
-                            <span class="pub-year">2024</span>
-                            <span class="pub-badge">Oral Presentation</span>
+                            <span class="pub-journal">Frontiers in Pharmacology</span>
+                            <span class="pub-if">IF = 5.6</span>
                         </div>
+                        <p class="pub-highlight">第一作者 | 因果推断识别IBD亚型调控因子，揭示CD与UC差异机制</p>
                     </div>
                 </div>
 
-                <!-- Publication 4 -->
+                <!-- Pub 4 -->
                 <div class="pub-item">
-                    <div class="pub-number">04</div>
+                    <div class="pub-badge">04</div>
                     <div class="pub-content">
-                        <h3 class="pub-title">Self-Supervised Learning for Scientific Discovery: A Survey and New Directions</h3>
-                        <p class="pub-desc">系统综述了自监督学习在科学发现中的应用，提出了面向科学数据的预训练范式，为AI for Science领域提供了全面的方法论指导。</p>
+                        <h3 class="pub-title">The roles of Qishen granules recipes in the treatment of heart failure</h3>
                         <div class="pub-meta">
-                            <span class="pub-journal">Science Advances</span>
-                            <span class="pub-year">2024</span>
+                            <span class="pub-journal">Journal of Ethnopharmacology</span>
+                            <span class="pub-if">IF = 5.4</span>
                         </div>
+                        <p class="pub-highlight">共同第一作者 | 系统阐述芪参颗粒治疗心力衰竭的作用机制</p>
                     </div>
                 </div>
 
-                <!-- Publication 5 -->
+                <!-- Pub 5 -->
                 <div class="pub-item">
-                    <div class="pub-number">05</div>
+                    <div class="pub-badge">05</div>
                     <div class="pub-content">
-                        <h3 class="pub-title">Efficient Transformer Architectures for Long-Range Time Series Forecasting</h3>
-                        <p class="pub-desc">设计了针对长程时序预测的高效Transformer架构，通过线性注意力机制和层次化建模，在保持精度的同时显著降低了计算复杂度。</p>
+                        <h3 class="pub-title">Decomposing the mechanism of Qishen granules in the treatment of heart failure by quantitative pathway analysis</h3>
                         <div class="pub-meta">
-                            <span class="pub-journal">ICML 2023</span>
-                            <span class="pub-year">2023</span>
-                            <span class="pub-badge">Spotlight</span>
+                            <span class="pub-journal">Molecules</span>
+                            <span class="pub-if">IF = 4.6</span>
                         </div>
+                        <p class="pub-highlight">共同第一作者 | 定量通路分析解析芪参颗粒治疗心衰的分子机制</p>
                     </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section 4: Grants & Achievements -->
+    <section class="achievements">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-label">Grants & Awards</span>
+                <h2 class="section-title">基金项目与成果</h2>
+            </div>
+            <div class="achievements-grid">
+                <!-- Grants -->
+                <div class="achievement-card">
+                    <h3>
+                        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1.41 16.09V20h-2.67v-1.93c-1.71-.36-3.16-1.46-3.27-3.4h1.96c.1 1.05.82 1.87 2.65 1.87 1.96 0 2.4-.98 2.4-1.59 0-.83-.44-1.61-2.67-2.14-2.48-.6-4.18-1.62-4.18-3.67 0-1.72 1.39-2.84 3.11-3.21V4h2.67v1.95c1.86.45 2.79 1.86 2.85 3.39H14.3c-.05-1.11-.64-1.87-2.22-1.87-1.5 0-2.4.68-2.4 1.64 0 .84.65 1.39 2.67 1.91s4.18 1.39 4.18 3.91c-.01 1.83-1.38 2.83-3.12 3.16z"/>
+                        </svg>
+                        主持基金项目
+                    </h3>
+                    <ul class="achievement-list">
+                        <li>
+                            <strong>国家自然科学基金青年项目（C类）</strong><br>
+                            肠道Phocaeicola vulgatus缺乏通过5'-甲硫腺苷代谢介导心力衰竭心肌线粒体氧化磷酸化障碍的机制及益气活血治法干预研究<br>
+                            <span class="grant-period">项目编号：82505223 | 2026.01 - 2028.12</span>
+                        </li>
+                        <li>
+                            <strong>中国博士后科学基金第77批面上项目</strong><br>
+                            益气活血中药芪参颗粒调控肠道Phocaeicola vulgatus-MTA代谢改善心力衰竭心肌线粒体氧化磷酸化功能障碍的机制研究<br>
+                            <span class="grant-period">项目编号：2025M773866 | 2025.09 - 2027.09</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Key Achievements -->
+                <div class="achievement-card">
+                    <h3>
+                        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M19 5h-2V3H7v2H5c-1.1 0-2 .9-2 2v1c0 2.55 1.92 4.63 4.39 4.94.63 1.5 1.98 2.63 3.61 2.96V19H7v2h10v-2h-4v-3.1c1.63-.33 2.98-1.46 3.61-2.96C19.08 12.63 21 10.55 21 8V7c0-1.1-.9-2-2-2zM5 8V7h2v3.82C5.84 10.4 5 9.3 5 8zm14 0c0 1.3-.84 2.4-2 2.82V7h2v1z"/>
+                        </svg>
+                        主要研究成果
+                    </h3>
+                    <ul class="achievement-list">
+                        <li>
+                            <strong>干湿一体化研究体系</strong><br>
+                            构建"多组学整合分析—因果推断算法—分子机制验证"相结合的研究体系
+                        </li>
+                        <li>
+                            <strong>原创性科学发现</strong><br>
+                            揭示肠道微生态与疾病因果关系，挖掘核心驱动基因，阐明中药复方调控机制
+                        </li>
+                        <li>
+                            <strong>方法学创新</strong><br>
+                            开发xMarkerFinder等微生物标志物发现工具，为中医药现代化提供方法学支撑
+                        </li>
+                        <li>
+                            <strong>学术影响力</strong><br>
+                            发表SCI论文14篇，其中第一作者6篇，涵盖Gastroenterology (IF=29.4)、Gut Microbes (IF=12.2)等顶级期刊
+                        </li>
+                    </ul>
                 </div>
             </div>
         </div>
@@ -652,8 +747,8 @@
 
     <!-- Footer -->
     <footer class="footer">
-        <p>© 2025 张明远 | 清华大学计算机科学与技术系</p>
-        <p style="margin-top: 0.5rem; opacity: 0.7;">联系邮箱: zhangmingyuan@tsinghua.edu.cn</p>
+        <p>© 2025 高升 | 广州中医药大学</p>
+        <p>肠道微生物与中医药研究中心</p>
     </footer>
 </body>
 </html>
