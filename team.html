@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Team | 高升实验室 - 广州中医药大学</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Noto+Serif+SC:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        /* Team Page Specific Styles */
+        .team-section {
+            padding: 3rem 2rem 5rem;
+            background-color: var(--bg-light);
+        }
+
+        /* PI Section */
+        .pi-section {
+            background: var(--white);
+            border-radius: 20px;
+            padding: 3rem;
+            margin-bottom: 3rem;
+            box-shadow: var(--card-shadow);
+            display: grid;
+            grid-template-columns: 280px 1fr;
+            gap: 3rem;
+            align-items: start;
+        }
+
+        .pi-photo {
+            width: 100%;
+            aspect-ratio: 3/4;
+            background: linear-gradient(135deg, var(--bg-light), var(--border-light));
+            border-radius: 16px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+        }
+
+        .pi-photo svg {
+            width: 80px;
+            height: 80px;
+            fill: var(--text-muted);
+        }
+
+        .pi-info h2 {
+            font-size: 2rem;
+            color: var(--primary-color);
+            margin-bottom: 0.5rem;
+        }
+
+        .pi-role {
+            font-size: 1.1rem;
+            color: var(--accent-color);
+            font-weight: 500;
+            margin-bottom: 1.5rem;
+        }
+
+        .pi-bio {
+            color: var(--text-light);
+            line-height: 1.8;
+            margin-bottom: 1.5rem;
+        }
+
+        .pi-stats {
+            display: flex;
+            gap: 2rem;
+            flex-wrap: wrap;
+        }
+
+        .pi-stat {
+            text-align: center;
+        }
+
+        .pi-stat-number {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: var(--primary-color);
+        }
+
+        .pi-stat-label {
+            font-size: 0.85rem;
+            color: var(--text-light);
+        }
+
+        /* Team Members Section */
+        .members-section {
+            margin-top: 2rem;
+        }
+
+        .members-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .member-card {
+            background: var(--white);
+            border-radius: 16px;
+            padding: 1.5rem;
+            box-shadow: var(--card-shadow);
+            transition: var(--transition);
+            text-align: center;
+        }
+
+        .member-card:hover {
+            transform: translateY(-4px);
+            box-shadow: var(--card-hover);
+        }
+
+        .member-photo {
+            width: 120px;
+            height: 120px;
+            background: linear-gradient(135deg, var(--bg-light), var(--border-light));
+            border-radius: 50%;
+            margin: 0 auto 1rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+        }
+
+        .member-photo svg {
+            width: 50px;
+            height: 50px;
+            fill: var(--text-muted);
+        }
+
+        .member-name {
+            font-size: 1.1rem;
+            color: var(--primary-color);
+            font-weight: 600;
+            margin-bottom: 0.25rem;
+        }
+
+        .member-role {
+            font-size: 0.9rem;
+            color: var(--accent-color);
+            font-weight: 500;
+            margin-bottom: 0.75rem;
+        }
+
+        .member-interest {
+            font-size: 0.85rem;
+            color: var(--text-light);
+            line-height: 1.5;
+        }
+
+        /* Join Us Card */
+        .join-card {
+            background: linear-gradient(135deg, var(--accent-color), var(--accent-light));
+            color: var(--white);
+            border-radius: 16px;
+            padding: 2rem;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            min-height: 280px;
+        }
+
+        .join-card h3 {
+            font-size: 1.4rem;
+            margin-bottom: 1rem;
+        }
+
+        .join-card p {
+            opacity: 0.9;
+            margin-bottom: 1.5rem;
+            font-size: 0.95rem;
+        }
+
+        .join-card .btn {
+            background: var(--white);
+            color: var(--accent-color);
+            align-self: center;
+        }
+
+        .join-card .btn:hover {
+            background: var(--primary-color);
+            color: var(--white);
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .team-section {
+                padding: 2rem 1.25rem 4rem;
+            }
+
+            .pi-section {
+                grid-template-columns: 1fr;
+                padding: 2rem;
+                gap: 2rem;
+            }
+
+            .pi-photo {
+                max-width: 200px;
+                margin: 0 auto;
+            }
+
+            .pi-info {
+                text-align: center;
+            }
+
+            .pi-stats {
+                justify-content: center;
+            }
+
+            .members-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar" id="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="nav-logo">
+                <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/>
+                </svg>
+                高升实验室
+            </a>
+            <div class="nav-toggle" id="navToggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+            <ul class="nav-menu" id="navMenu">
+                <li><a href="index.html" class="nav-link">Home</a></li>
+                <li><a href="team.html" class="nav-link active">Team</a></li>
+                <li><a href="publications.html" class="nav-link">Publications</a></li>
+                <li><a href="news.html" class="nav-link">News</a></li>
+                <li><a href="contact.html" class="nav-link">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Page Header -->
+    <header class="page-header">
+        <h1>研究团队</h1>
+        <p>肠道微生物与中医药交叉研究实验室</p>
+    </header>
+
+    <!-- Team Section -->
+    <section class="team-section">
+        <div class="container">
+            <!-- PI Section -->
+            <div class="pi-section">
+                <div class="pi-photo">
+                    <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/>
+                    </svg>
+                </div>
+                <div class="pi-info">
+                    <h2>高升</h2>
+                    <p class="pi-role">博士后研究员 | 实验室负责人</p>
+                    <p class="pi-bio">
+                        广州中医药大学博士后，专注于肠道微生物-宿主互作与中医药防治心力衰竭研究。
+                        构建"多组学整合—因果推断—机制验证"干湿一体化研究体系，
+                        在Gastroenterology、Gut Microbes等顶级期刊发表SCI论文14篇。
+                        主持国家自然科学基金青年项目、中国博士后科学基金面上项目。
+                    </p>
+                    <div class="pi-stats">
+                        <div class="pi-stat">
+                            <div class="pi-stat-number">14</div>
+                            <div class="pi-stat-label">SCI论文</div>
+                        </div>
+                        <div class="pi-stat">
+                            <div class="pi-stat-number">6</div>
+                            <div class="pi-stat-label">第一作者</div>
+                        </div>
+                        <div class="pi-stat">
+                            <div class="pi-stat-number">2</div>
+                            <div class="pi-stat-label">主持基金</div>
+                        </div>
+                        <div class="pi-stat">
+                            <div class="pi-stat-number">29.4</div>
+                            <div class="pi-stat-label">最高IF</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Members Section -->
+            <div class="members-section">
+                <div class="section-header">
+                    <span class="section-label">Lab Members</span>
+                    <h2 class="section-title">团队成员</h2>
+                    <p class="section-subtitle">
+                        我们正在组建一支充满活力的研究团队
+                    </p>
+                </div>
+                <div class="members-grid">
+                    <!-- Placeholder Members -->
+                    <div class="member-card">
+                        <div class="member-photo">
+                            <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/>
+                            </svg>
+                        </div>
+                        <h3 class="member-name">待定</h3>
+                        <p class="member-role">博士研究生</p>
+                        <p class="member-interest">研究方向：肠道微生物与心血管疾病</p>
+                    </div>
+
+                    <div class="member-card">
+                        <div class="member-photo">
+                            <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/>
+                            </svg>
+                        </div>
+                        <h3 class="member-name">待定</h3>
+                        <p class="member-role">硕士研究生</p>
+                        <p class="member-interest">研究方向：多组学数据分析</p>
+                    </div>
+
+                    <div class="member-card">
+                        <div class="member-photo">
+                            <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/>
+                            </svg>
+                        </div>
+                        <h3 class="member-name">待定</h3>
+                        <p class="member-role">硕士研究生</p>
+                        <p class="member-interest">研究方向：中药复方机制研究</p>
+                    </div>
+
+                    <!-- Join Us Card -->
+                    <div class="join-card">
+                        <h3>加入我们</h3>
+                        <p>我们正在招募对肠道微生物、中医药现代化研究感兴趣的博士生和硕士生</p>
+                        <a href="contact.html" class="btn">联系我们</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-links">
+            <a href="index.html">Home</a>
+            <a href="team.html">Team</a>
+            <a href="publications.html">Publications</a>
+            <a href="news.html">News</a>
+            <a href="contact.html">Contact</a>
+        </div>
+        <p>© 2025 高升 | 广州中医药大学</p>
+        <p>肠道微生物与中医药研究中心</p>
+    </footer>
+
+    <script>
+        // Mobile menu toggle
+        const navToggle = document.getElementById('navToggle');
+        const navMenu = document.getElementById('navMenu');
+
+        navToggle.addEventListener('click', () => {
+            navToggle.classList.toggle('active');
+            navMenu.classList.toggle('active');
+        });
+
+        // Close menu when clicking a link
+        document.querySelectorAll('.nav-link').forEach(link => {
+            link.addEventListener('click', () => {
+                navToggle.classList.remove('active');
+                navMenu.classList.remove('active');
+            });
+        });
+
+        // Navbar scroll effect
+        const navbar = document.getElementById('navbar');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 50) {
+                navbar.classList.add('scrolled');
+            } else {
+                navbar.classList.remove('scrolled');
+            }
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,473 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>News | 高升实验室 - 广州中医药大学</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Noto+Serif+SC:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        /* News Page Specific Styles */
+        .news-section {
+            padding: 3rem 2rem 5rem;
+            background-color: var(--bg-light);
+        }
+
+        /* Timeline */
+        .timeline {
+            position: relative;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 24px;
+            top: 0;
+            bottom: 0;
+            width: 2px;
+            background: linear-gradient(to bottom, var(--accent-color), var(--accent-light));
+        }
+
+        .timeline-item {
+            position: relative;
+            padding-left: 70px;
+            margin-bottom: 2rem;
+        }
+
+        .timeline-dot {
+            position: absolute;
+            left: 15px;
+            top: 0;
+            width: 20px;
+            height: 20px;
+            background: var(--white);
+            border: 3px solid var(--accent-color);
+            border-radius: 50%;
+            z-index: 1;
+        }
+
+        .timeline-dot.highlight {
+            background: var(--accent-color);
+            box-shadow: 0 0 0 4px rgba(45, 125, 154, 0.2);
+        }
+
+        .timeline-content {
+            background: var(--white);
+            border-radius: 16px;
+            padding: 1.5rem;
+            box-shadow: var(--card-shadow);
+            transition: var(--transition);
+        }
+
+        .timeline-content:hover {
+            box-shadow: var(--card-hover);
+        }
+
+        .timeline-date {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-size: 0.85rem;
+            color: var(--accent-color);
+            font-weight: 600;
+            margin-bottom: 0.75rem;
+        }
+
+        .timeline-date svg {
+            width: 16px;
+            height: 16px;
+            fill: var(--accent-color);
+        }
+
+        .timeline-title {
+            font-size: 1.15rem;
+            color: var(--primary-color);
+            font-weight: 600;
+            margin-bottom: 0.75rem;
+            line-height: 1.4;
+        }
+
+        .timeline-desc {
+            font-size: 0.95rem;
+            color: var(--text-light);
+            line-height: 1.7;
+        }
+
+        .timeline-tags {
+            display: flex;
+            gap: 0.5rem;
+            margin-top: 1rem;
+            flex-wrap: wrap;
+        }
+
+        .timeline-tag {
+            font-size: 0.75rem;
+            padding: 0.25rem 0.75rem;
+            background: var(--bg-light);
+            color: var(--accent-color);
+            border-radius: 20px;
+            font-weight: 500;
+        }
+
+        .timeline-tag.paper {
+            background: #dbeafe;
+            color: #2563eb;
+        }
+
+        .timeline-tag.grant {
+            background: #d1fae5;
+            color: #059669;
+        }
+
+        .timeline-tag.conference {
+            background: #fef3c7;
+            color: #d97706;
+        }
+
+        .timeline-tag.award {
+            background: #fce7f3;
+            color: #db2777;
+        }
+
+        /* Year Divider */
+        .year-divider {
+            position: relative;
+            text-align: center;
+            margin: 3rem 0 2rem;
+        }
+
+        .year-divider::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            right: 0;
+            top: 50%;
+            height: 1px;
+            background: var(--border-light);
+        }
+
+        .year-divider span {
+            position: relative;
+            background: var(--bg-light);
+            padding: 0 1rem;
+            font-size: 1.2rem;
+            font-weight: 600;
+            color: var(--primary-color);
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .news-section {
+                padding: 2rem 1.25rem 4rem;
+            }
+
+            .timeline::before {
+                left: 19px;
+            }
+
+            .timeline-item {
+                padding-left: 55px;
+            }
+
+            .timeline-dot {
+                left: 10px;
+                width: 18px;
+                height: 18px;
+            }
+
+            .timeline-content {
+                padding: 1.25rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar" id="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="nav-logo">
+                <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/>
+                </svg>
+                高升实验室
+            </a>
+            <div class="nav-toggle" id="navToggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+            <ul class="nav-menu" id="navMenu">
+                <li><a href="index.html" class="nav-link">Home</a></li>
+                <li><a href="team.html" class="nav-link">Team</a></li>
+                <li><a href="publications.html" class="nav-link">Publications</a></li>
+                <li><a href="news.html" class="nav-link active">News</a></li>
+                <li><a href="contact.html" class="nav-link">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Page Header -->
+    <header class="page-header">
+        <h1>新闻动态</h1>
+        <p>实验室最新进展与学术活动</p>
+    </header>
+
+    <!-- News Section -->
+    <section class="news-section">
+        <div class="container">
+            <div class="timeline">
+                <!-- 2025 -->
+                <div class="year-divider">
+                    <span>2025</span>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-dot highlight"></div>
+                    <div class="timeline-content">
+                        <div class="timeline-date">
+                            <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M19 3h-1V1h-2v2H8V1H6v2H5c-1.11 0-1.99.9-1.99 2L3 19c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm0 16H5V8h14v11zM9 10H7v2h2v-2zm4 0h-2v2h2v-2zm4 0h-2v2h2v-2zm-8 4H7v2h2v-2zm4 0h-2v2h2v-2zm4 0h-2v2h2v-2z"/>
+                            </svg>
+                            2025年3月
+                        </div>
+                        <h3 class="timeline-title">个人学术网站上线</h3>
+                        <p class="timeline-desc">
+                            高升实验室官方网站正式上线，展示研究方向、团队成员、发表论文和最新动态。
+                            网站采用响应式设计，支持桌面和移动设备访问。
+                        </p>
+                        <div class="timeline-tags">
+                            <span class="timeline-tag">实验室</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-dot highlight"></div>
+                    <div class="timeline-content">
+                        <div class="timeline-date">
+                            <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M19 3h-1V1h-2v2H8V1H6v2H5c-1.11 0-1.99.9-1.99 2L3 19c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm0 16H5V8h14v11zM9 10H7v2h2v-2zm4 0h-2v2h2v-2zm4 0h-2v2h2v-2zm-8 4H7v2h2v-2zm4 0h-2v2h2v-2zm4 0h-2v2h2v-2z"/>
+                            </svg>
+                            2025年1月
+                        </div>
+                        <h3 class="timeline-title">获批国家自然科学基金青年项目</h3>
+                        <p class="timeline-desc">
+                            主持的国家自然科学基金青年项目（C类）正式获批，项目编号：82505223。
+                            研究主题为"肠道Phocaeicola vulgatus缺乏通过5'-甲硫腺苷代谢介导心力衰竭心肌线粒体氧化磷酸化障碍的机制及益气活血治法干预研究"，
+                            执行期为2026年1月至2028年12月。
+                        </p>
+                        <div class="timeline-tags">
+                            <span class="timeline-tag grant">基金</span>
+                            <span class="timeline-tag">国自然</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 2024 -->
+                <div class="year-divider">
+                    <span>2024</span>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-dot highlight"></div>
+                    <div class="timeline-content">
+                        <div class="timeline-date">
+                            <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M19 3h-1V1h-2v2H8V1H6v2H5c-1.11 0-1.99.9-1.99 2L3 19c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm0 16H5V8h14v11zM9 10H7v2h2v-2zm4 0h-2v2h2v-2zm4 0h-2v2h2v-2zm-8 4H7v2h2v-2zm4 0h-2v2h2v-2zm4 0h-2v2h2v-2z"/>
+                            </svg>
+                            2024年12月
+                        </div>
+                        <h3 class="timeline-title">Gastroenterology论文发表</h3>
+                        <p class="timeline-desc">
+                            第一作者论文"Toward the understanding of altered gut microbiome in Crohn's disease: cause or consequence"
+                            在消化领域顶级期刊Gastroenterology（IF=29.4）正式发表。
+                            该研究运用因果推断方法阐明了肠道微生物与克罗恩病的因果关系。
+                        </p>
+                        <div class="timeline-tags">
+                            <span class="timeline-tag paper">论文发表</span>
+                            <span class="timeline-tag">高影响因子</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <div class="timeline-date">
+                            <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M19 3h-1V1h-2v2H8V1H6v2H5c-1.11 0-1.99.9-1.99 2L3 19c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm0 16H5V8h14v11zM9 10H7v2h2v-2zm4 0h-2v2h2v-2zm4 0h-2v2h2v-2zm-8 4H7v2h2v-2zm4 0h-2v2h2v-2zm4 0h-2v2h2v-2z"/>
+                            </svg>
+                            2024年9月
+                        </div>
+                        <h3 class="timeline-title">获批中国博士后科学基金面上项目</h3>
+                        <p class="timeline-desc">
+                            主持的中国博士后科学基金第77批面上项目获批，项目编号：2025M773866。
+                            研究主题为"益气活血中药芪参颗粒调控肠道Phocaeicola vulgatus-MTA代谢改善心力衰竭心肌线粒体氧化磷酸化功能障碍的机制研究"，
+                            执行期为2025年9月至2027年9月。
+                        </p>
+                        <div class="timeline-tags">
+                            <span class="timeline-tag grant">基金</span>
+                            <span class="timeline-tag">博士后基金</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <div class="timeline-date">
+                            <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M19 3h-1V1h-2v2H8V1H6v2H5c-1.11 0-1.99.9-1.99 2L3 19c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm0 16H5V8h14v11zM9 10H7v2h2v-2zm4 0h-2v2h2v-2zm4 0h-2v2h2v-2zm-8 4H7v2h2v-2zm4 0h-2v2h2v-2zm4 0h-2v2h2v-2z"/>
+                            </svg>
+                            2024年8月
+                        </div>
+                        <h3 class="timeline-title">Gut Microbes论文发表</h3>
+                        <p class="timeline-desc">
+                            共同第一作者论文"Microbial genes outperform species and SNVs as diagnostic markers for Crohn's disease on multicohort fecal metagenomes empowered by AI"
+                            在Gut Microbes（IF=12.2）发表。研究利用人工智能方法发现微生物基因标志物，具有重要方法学创新价值。
+                        </p>
+                        <div class="timeline-tags">
+                            <span class="timeline-tag paper">论文发表</span>
+                            <span class="timeline-tag">人工智能</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <div class="timeline-date">
+                            <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M19 3h-1V1h-2v2H8V1H6v2H5c-1.11 0-1.99.9-1.99 2L3 19c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm0 16H5V8h14v11zM9 10H7v2h2v-2zm4 0h-2v2h2v-2zm4 0h-2v2h2v-2zm-8 4H7v2h2v-2zm4 0h-2v2h2v-2zm4 0h-2v2h2v-2z"/>
+                            </svg>
+                            2024年6月
+                        </div>
+                        <h3 class="timeline-title">参加国际肠道微生物组大会</h3>
+                        <p class="timeline-desc">
+                            受邀参加国际肠道微生物组大会（International Gut Microbiome Conference），
+                            并就因果推断在肠道微生物研究中的应用做口头报告，获得与会专家好评。
+                        </p>
+                        <div class="timeline-tags">
+                            <span class="timeline-tag conference">学术会议</span>
+                            <span class="timeline-tag">口头报告</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 2023 -->
+                <div class="year-divider">
+                    <span>2023</span>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <div class="timeline-date">
+                            <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M19 3h-1V1h-2v2H8V1H6v2H5c-1.11 0-1.99.9-1.99 2L3 19c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm0 16H5V8h14v11zM9 10H7v2h2v-2zm4 0h-2v2h2v-2zm4 0h-2v2h2v-2zm-8 4H7v2h2v-2zm4 0h-2v2h2v-2zm4 0h-2v2h2v-2z"/>
+                            </svg>
+                            2023年11月
+                        </div>
+                        <h3 class="timeline-title">Frontiers in Pharmacology论文发表</h3>
+                        <p class="timeline-desc">
+                            第一作者论文"IBD subtype-regulators IFNG and GBP5 identified by causal inference drive more intense innate immunity and inflammatory responses in CD than those in UC"
+                            发表，揭示CD与UC的免疫差异机制。
+                        </p>
+                        <div class="timeline-tags">
+                            <span class="timeline-tag paper">论文发表</span>
+                            <span class="timeline-tag">因果推断</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <div class="timeline-date">
+                            <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M19 3h-1V1h-2v2H8V1H6v2H5c-1.11 0-1.99.9-1.99 2L3 19c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm0 16H5V8h14v11zM9 10H7v2h2v-2zm4 0h-2v2h2v-2zm4 0h-2v2h2v-2zm-8 4H7v2h2v-2zm4 0h-2v2h2v-2zm4 0h-2v2h2v-2z"/>
+                            </svg>
+                            2023年8月
+                        </div>
+                        <h3 class="timeline-title">Journal of Ethnopharmacology论文发表</h3>
+                        <p class="timeline-desc">
+                            共同第一作者论文"The roles of Qishen granules recipes in the treatment of heart failure"
+                            发表，系统阐述芪参颗粒治疗心力衰竭的作用机制。
+                        </p>
+                        <div class="timeline-tags">
+                            <span class="timeline-tag paper">论文发表</span>
+                            <span class="timeline-tag">中医药</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <div class="timeline-date">
+                            <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M19 3h-1V1h-2v2H8V1H6v2H5c-1.11 0-1.99.9-1.99 2L3 19c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm0 16H5V8h14v11zM9 10H7v2h2v-2zm4 0h-2v2h2v-2zm4 0h-2v2h2v-2zm-8 4H7v2h2v-2zm4 0h-2v2h2v-2zm4 0h-2v2h2v-2z"/>
+                            </svg>
+                            2023年6月
+                        </div>
+                        <h3 class="timeline-title">进站广州中医药大学博士后流动站</h3>
+                        <p class="timeline-desc">
+                            正式进站广州中医药大学中医学博士后科研流动站，
+                            开始博士后阶段的研究工作，研究方向为肠道微生物与中医药防治心血管疾病。
+                        </p>
+                        <div class="timeline-tags">
+                            <span class="timeline-tag">博士后</span>
+                            <span class="timeline-tag">广州中医药大学</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-links">
+            <a href="index.html">Home</a>
+            <a href="team.html">Team</a>
+            <a href="publications.html">Publications</a>
+            <a href="news.html">News</a>
+            <a href="contact.html">Contact</a>
+        </div>
+        <p>© 2025 高升 | 广州中医药大学</p>
+        <p>肠道微生物与中医药研究中心</p>
+    </footer>
+
+    <script>
+        // Mobile menu toggle
+        const navToggle = document.getElementById('navToggle');
+        const navMenu = document.getElementById('navMenu');
+
+        navToggle.addEventListener('click', () => {
+            navToggle.classList.toggle('active');
+            navMenu.classList.toggle('active');
+        });
+
+        // Close menu when clicking a link
+        document.querySelectorAll('.nav-link').forEach(link => {
+            link.addEventListener('click', () => {
+                navToggle.classList.remove('active');
+                navMenu.classList.remove('active');
+            });
+        });
+
+        // Navbar scroll effect
+        const navbar = document.getElementById('navbar');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 50) {
+                navbar.classList.add('scrolled');
+            } else {
+                navbar.classList.remove('scrolled');
+            }
+        });
+    </script>
+</body>
+</html>
