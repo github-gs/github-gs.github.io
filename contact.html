@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contact | 高升实验室 - 广州中医药大学</title>
+    <title>Contact | XXXX课题组 - 广州中医药大学</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Noto+Serif+SC:wght@400;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
@@ -16,7 +16,7 @@
 
         .contact-grid {
             display: grid;
-            grid-template-columns: 1fr 1.2fr;
+            grid-template-columns: 1fr 1fr;
             gap: 3rem;
             max-width: 1100px;
             margin: 0 auto;
@@ -104,102 +104,84 @@
             color: var(--primary-color);
         }
 
-        /* Email obfuscation style */
-        .email-protected {
-            font-family: monospace;
-            background: var(--bg-light);
-            padding: 0.25rem 0.5rem;
-            border-radius: 4px;
-            font-size: 0.9rem;
+        /* Map Container */
+        .map-container {
+            background: var(--white);
+            border-radius: 16px;
+            padding: 1.75rem;
+            box-shadow: var(--card-shadow);
         }
 
-        /* Map Placeholder */
-        .map-placeholder {
-            background: linear-gradient(135deg, #e0e7ff 0%, #c7d2fe 100%);
+        .map-container h3 {
+            font-size: 1.1rem;
+            color: var(--primary-color);
+            margin-bottom: 1.25rem;
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+        }
+
+        .map-container h3 svg {
+            width: 22px;
+            height: 22px;
+            fill: var(--accent-color);
+        }
+
+        .map-iframe {
+            width: 100%;
+            height: 300px;
             border-radius: 12px;
-            height: 200px;
+            border: none;
+        }
+
+        /* QR Code Section */
+        .qr-section {
+            background: var(--white);
+            border-radius: 16px;
+            padding: 1.75rem;
+            box-shadow: var(--card-shadow);
+            text-align: center;
+        }
+
+        .qr-section h3 {
+            font-size: 1.1rem;
+            color: var(--primary-color);
+            margin-bottom: 1.25rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.75rem;
+        }
+
+        .qr-section h3 svg {
+            width: 22px;
+            height: 22px;
+            fill: var(--accent-color);
+        }
+
+        .qr-placeholder {
+            width: 180px;
+            height: 180px;
+            background: var(--bg-light);
+            border-radius: 12px;
+            margin: 0 auto;
             display: flex;
             flex-direction: column;
             align-items: center;
             justify-content: center;
-            color: var(--primary-color);
-            margin-top: 0.5rem;
+            border: 2px dashed var(--border-light);
         }
 
-        .map-placeholder svg {
-            width: 48px;
-            height: 48px;
-            fill: var(--accent-color);
-            margin-bottom: 0.75rem;
-        }
-
-        .map-placeholder p {
-            font-size: 0.9rem;
-            opacity: 0.8;
-        }
-
-        /* Contact Form */
-        .contact-form-wrapper {
-            background: var(--white);
-            border-radius: 16px;
-            padding: 2rem;
-            box-shadow: var(--card-shadow);
-        }
-
-        .contact-form-wrapper h3 {
-            font-size: 1.25rem;
-            color: var(--primary-color);
+        .qr-placeholder svg {
+            width: 60px;
+            height: 60px;
+            fill: var(--text-muted);
             margin-bottom: 0.5rem;
         }
 
-        .contact-form-wrapper > p {
-            color: var(--text-light);
-            font-size: 0.95rem;
-            margin-bottom: 1.5rem;
-        }
-
-        .form-group {
-            margin-bottom: 1.25rem;
-        }
-
-        .form-group label {
-            display: block;
-            font-size: 0.9rem;
-            font-weight: 500;
-            color: var(--text-dark);
-            margin-bottom: 0.5rem;
-        }
-
-        .form-group input,
-        .form-group textarea {
-            width: 100%;
-            padding: 0.875rem 1rem;
-            border: 1px solid var(--border-light);
-            border-radius: 8px;
-            font-size: 0.95rem;
-            font-family: inherit;
-            transition: var(--transition);
-            background: var(--white);
-        }
-
-        .form-group input:focus,
-        .form-group textarea:focus {
-            outline: none;
-            border-color: var(--accent-color);
-            box-shadow: 0 0 0 3px rgba(45, 125, 154, 0.1);
-        }
-
-        .form-group textarea {
-            min-height: 120px;
-            resize: vertical;
-        }
-
-        .form-note {
+        .qr-placeholder p {
             font-size: 0.8rem;
-            color: var(--text-muted);
-            margin-top: 1rem;
-            padding-top: 1rem;
-            border-top: 1px solid var(--border-light);
+            color: var(--text-light);
         }
 
         /* Collaboration Section */
@@ -248,8 +230,8 @@
                 gap: 2rem;
             }
 
-            .contact-form-wrapper {
-                padding: 1.5rem;
+            .map-iframe {
+                height: 250px;
             }
 
             .collab-areas {
@@ -271,7 +253,7 @@
                 <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                     <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/>
                 </svg>
-                高升实验室
+                XXXX课题组
             </a>
             <div class="nav-toggle" id="navToggle">
                 <span></span>
@@ -316,7 +298,7 @@
                             <div class="info-content">
                                 <div class="info-label">电子邮箱</div>
                                 <div class="info-value">
-                                    <span class="email-protected">gaosheng [at] gzy.edu.cn</span>
+                                    <a href="mailto:gaos@gzucm.edu.cn">gaos@gzucm.edu.cn</a>
                                 </div>
                             </div>
                         </div>
@@ -328,7 +310,7 @@
                             </div>
                             <div class="info-content">
                                 <div class="info-label">单位地址</div>
-                                <div class="info-value">广州中医药大学<br>广东省广州市番禺区大学城外环西路232号</div>
+                                <div class="info-value">广州中医药大学<br>广东省广州市番禺区大学城外环东路232号</div>
                             </div>
                         </div>
                         <div class="info-item">
@@ -339,58 +321,48 @@
                             </div>
                             <div class="info-content">
                                 <div class="info-label">所属机构</div>
-                                <div class="info-value">肠道微生物与中医药研究中心<br>博士后科研流动站</div>
+                                <div class="info-value">方证研究所<br>博士后科研流动站</div>
                             </div>
                         </div>
                     </div>
 
-                    <div class="info-card">
+                    <!-- QR Code Placeholder -->
+                    <div class="qr-section">
                         <h3>
                             <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                                <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/>
+                                <path d="M3 11h8V3H3v8zm2-6h4v4H5V5zM3 21h8v-8H3v8zm2-6h4v4H5v-4zM13 3v8h8V3h-8zm6 6h-4V5h4v4zM13 13h2v2h-2zM15 15h2v2h-2zM13 17h2v2h-2zM17 13h2v2h-2zM19 15h2v2h-2zM17 17h2v2h-2zM15 19h2v2h-2zM19 19h2v2h-2z"/>
                             </svg>
-                            位置地图
+                            微信二维码
                         </h3>
-                        <div class="map-placeholder">
+                        <div class="qr-placeholder">
                             <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                                <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/>
+                                <path d="M3 11h8V3H3v8zm2-6h4v4H5V5zM3 21h8v-8H3v8zm2-6h4v4H5v-4zM13 3v8h8V3h-8zm6 6h-4V5h4v4zM13 13h2v2h-2zM15 15h2v2h-2zM13 17h2v2h-2zM17 13h2v2h-2zM19 15h2v2h-2zM17 17h2v2h-2zM15 19h2v2h-2zM19 19h2v2h-2z"/>
                             </svg>
-                            <p>广州大学城 · 广州中医药大学</p>
+                            <p>扫码添加微信</p>
                         </div>
                     </div>
                 </div>
 
-                <!-- Contact Form -->
-                <div class="contact-form-wrapper">
-                    <h3>发送消息</h3>
-                    <p>对研究感兴趣？欢迎发送邮件咨询合作或交流</p>
-                    <form class="contact-form" onsubmit="event.preventDefault(); alert('感谢您的留言！此表单为演示用途，请直接发送邮件联系。');">
-                        <div class="form-group">
-                            <label for="name">姓名</label>
-                            <input type="text" id="name" name="name" placeholder="请输入您的姓名" required>
-                        </div>
-                        <div class="form-group">
-                            <label for="email">邮箱</label>
-                            <input type="email" id="email" name="email" placeholder="请输入您的邮箱地址" required>
-                        </div>
-                        <div class="form-group">
-                            <label for="subject">主题</label>
-                            <input type="text" id="subject" name="subject" placeholder="请输入邮件主题">
-                        </div>
-                        <div class="form-group">
-                            <label for="message">消息内容</label>
-                            <textarea id="message" name="message" placeholder="请输入您想咨询的内容..." required></textarea>
-                        </div>
-                        <button type="submit" class="btn btn-primary">
-                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                <path d="M22 2L11 13M22 2l-7 20-4-9-9-4 20-7z"/>
-                            </svg>
-                            发送消息
-                        </button>
-                        <p class="form-note">
-                            注：此表单为演示用途，实际使用时请直接发送邮件至上方邮箱地址。
-                        </p>
-                    </form>
+                <!-- Map -->
+                <div class="map-container">
+                    <h3>
+                        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/>
+                        </svg>
+                        位置地图
+                    </h3>
+                    <iframe 
+                        class="map-iframe"
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3670.1234567890123!2d113.397!3d23.053!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3403c0f3e6e6e6e6%3A0x6e6e6e6e6e6e6e6e!2z5bm%2F5bee5L2g5Zy65a2m6Zmi5aSn5a2m!5e0!3m2!1szh-CN!2scn!4v1234567890123!5m2!1szh-CN!2scn"
+                        allowfullscreen=""
+                        loading="lazy"
+                        referrerpolicy="no-referrer-when-downgrade">
+                    </iframe>
+                    <p style="margin-top: 0.75rem; font-size: 0.85rem; color: var(--text-light);">
+                        <a href="https://maps.google.com/?q=广州中医药大学" target="_blank" style="color: var(--accent-color);">
+                            在 Google Maps 中打开 →
+                        </a>
+                    </p>
                 </div>
             </div>
 
@@ -419,8 +391,7 @@
             <a href="news.html">News</a>
             <a href="contact.html">Contact</a>
         </div>
-        <p>© 2025 高升 | 广州中医药大学</p>
-        <p>肠道微生物与中医药研究中心</p>
+        <p>© 2026 广州中医药大学 方证研究所</p>
     </footer>
 
     <script>
